@@ -86,14 +86,25 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/dom_node_collection.js":
+/*!************************************!*\
+  !*** ./src/dom_node_collection.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("class DOMNodeCollection {\n  constructor(htmlArr) {\n    this.htmlArr = htmlArr\n  }\n\n  func() {}\n}\n\n\n\n\n\n\nmodule.exports = DOMNodeCollection\n\n//# sourceURL=webpack:///./src/dom_node_collection.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("window.$l = function (el) {\n\n  // selector\n  if (el instanceof String) {\n    let nodeList = Document.querySelectorAll(el)\n  }\n}\n\nwindow.$l = $l\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("const DOMNodeCollection = __webpack_require__(/*! ./dom_node_collection */ \"./src/dom_node_collection.js\");\n\nwindow.$l = function (el) {\n  // console.log(el);\n\n  // wrapper\n  if (el instanceof HTMLElement) {\n    // console.log('cheese');\n    return new DOMNodeCollection([el]);\n  }\n  // else {\n\n  //   // selector\n  //   let nodeList = document.querySelectorAll(el)\n  //   console.log(nodeList);\n  // }\n\n}\n\n// window.$l = $l\nwindow.DOMNodeCollection = DOMNodeCollection;\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
